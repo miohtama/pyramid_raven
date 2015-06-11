@@ -30,6 +30,10 @@ Configure Raven DSN address in the INI configuration of your application:
 
 ## Configure
 
+In Sentry, make sure in your project settings *Platform* is set to *Python*, 
+not *Pyramid (Python)*, as the latter does not support capturing additional 
+information from the exceptions like HTTP headers.
+
 Any `raven.*` namespaced settings in your `.ini` [configuration file][] will
 be passed to the [raven client][] constructor -- although it's your
 responsibility to coerce them to the right type, e.g.:
